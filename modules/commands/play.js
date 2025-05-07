@@ -38,7 +38,7 @@ function getVideoID(url) {
 }
 
 const config = {
-    name: "singx",
+    name: "play",
     author: "Mesbah Saxx",
     credits: "Mesbah Saxx",
     version: "1.2.0",
@@ -67,7 +67,7 @@ async function onStart({ api, args, event }) {
             }
         } else {
             const songName = args.join(' ');
-       	    w = await api.sendMessage(`Searching song "${songName}"... `, event.threadID);
+       	    w = await api.sendMessage(`"${songName}" সার্চ করা হচ্ছে...`, event.threadID);
             const r = await yts(songName);
             const videos = r.videos.slice(0, 50);
 
@@ -83,7 +83,7 @@ async function onStart({ api, args, event }) {
         const shortenedLink = (await axios.get(`https://tinyurl.com/api-create${o}?url=${encodeURIComponent(downloadLink)}`)).data;
 
         await api.sendMessage({
-            body: `🔖 - 𝚃𝚒𝚝𝚕𝚎: ${title}\n✨ - 𝚀𝚞𝚊𝚕𝚒𝚝𝚢: ${quality}\n\n📥 - 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙻𝚒𝚗𝚔: ${shortenedLink}`,
+            body: `[🤍] 𝘚𝘵𝘢𝘺 𝘞𝘪𝘵𝘩 𝘛𝘢𝘯𝘷𝘪𝘳𝘉𝘰𝘵`,
             attachment: await global.utils.getStreamFromURL(downloadLink, title+'.mp3')
         }, event.threadID, event.messageID);
     } catch (e) {
