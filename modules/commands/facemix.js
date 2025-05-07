@@ -4,12 +4,13 @@ const path = require('path');
 
 module.exports.config = {
   name: `facemix`,
+  aliases: ["faceswap", "faceswab"],
   version: "1.1.0",
   permission: 0,
-  hasPermssion
+  hasPermssion: 0,
   credits: "churchill",
   description: "Swap Faces of two picture",
-  usePrefix: false,
+  usePrefix: true,
   premium: false,
   commandCategory: "without prefix",
   usages: ``,
